@@ -1,0 +1,31 @@
+{
+  "name": "farm-to-table",
+  "version": "1.0.0",
+  "description": "A customer to merchant farm item transaction web page",
+  "keywords": [
+    "farm",
+    "admin",
+    "crops",
+    "merchant"
+  ],
+  "homepage": "https://github.com/CMSC100-Laboratory/final-project-AzeOcram#readme",
+  "bugs": {
+    "url": "https://github.com/CMSC100-Laboratory/final-project-AzeOcram/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMSC100-Laboratory/final-project-AzeOcram.git"
+  },
+  "license": "ISC",
+  "author": "Odon MGR, Dela Cruz CJB, Mendoza DJS, Crisostomo RBV",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1",
+    "needle": "^3.5.0"
+  }
+}
