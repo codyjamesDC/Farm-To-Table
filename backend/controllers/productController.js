@@ -1,6 +1,5 @@
 import models from '../models';
 import mongoose from 'mongoose';
-import dotenv from ''
 
 try {
     await mongoose.connect(process.env.MONGO_URI);
