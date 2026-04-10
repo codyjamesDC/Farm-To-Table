@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-const Product = require('../models/Product');
-require('dotenv').config();
+import Product from '../models/Product.js';
 
 const getProducts = async (req, res) => { 
     try {
@@ -24,4 +22,4 @@ const deleteProduct = async (req, res) => {
 
 }
 
-module.exports = { getProducts, getProductById, addProduct, updateProduct, deleteProduct };
+export { getProducts, getProductById, addProduct, updateProduct, deleteProduct };
