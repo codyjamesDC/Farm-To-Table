@@ -1,2 +1,16 @@
 const productController = require('./controllers/productController');
+module.exports = (app) => {
+    app.use((req, res, next) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+        res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
+        res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
+        next();
+    })
 
+    app.get('/api/products', productController.getProducts);
+    app.get('/api/products/:id', productController.getProductById);
+    app.post('/api/products', productController.addProduct);
+    app.put('/api/products/:id', productController.updateProduct);
+    app.delete('/api/products/:id', productController.deleteProduct);
+}
