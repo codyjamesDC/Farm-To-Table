@@ -1,22 +1,20 @@
-import models from '../models';
-import mongoose from 'mongoose';
-
-try {
-    await mongoose.connect(process.env.MONGO_URI);
-} catch (err) {
-    console.error("Database connection failed:", err.message);
-    process.exit(1);
-}
-
-const { Product } = models.product;
+const mongoose = require('mongoose');
+const Product = require('../models/Product');
+require('dotenv').config();
 
 const getProducts = async (req, res) => { 
-
+    try {
+        const products = await Product.find();
+        res.status(200).json(products);
+    } catch (err) {
+        res.status(500).json({ message: 'Unable to get products', error: err.message });
+    }
 }
+
 const getProductById = async (req, res) => { 
 
 }
-const saveProduct = async (req, res) => { 
+const addProduct = async (req, res) => { 
 
 }
 const updateProduct = async (req, res) => { 
@@ -26,4 +24,4 @@ const deleteProduct = async (req, res) => {
 
 }
 
-module.exports = { getProducts, getProductById, saveProduct, updateProduct, deleteProduct };
+module.exports = { getProducts, getProductById, addProduct, updateProduct, deleteProduct };
