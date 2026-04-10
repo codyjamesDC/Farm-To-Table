@@ -1,4 +1,6 @@
-import { getProducts, getProductById, addProduct, updateProduct, deleteProduct } from '../controllers/productController.js';
+import productRoutes from './productRoutes.js';
+import userRoutes from './userRoutes.js';
+
 
 export default (app) => {
     app.use((req, res, next) => {
@@ -9,9 +11,6 @@ export default (app) => {
         next();
     });
 
-    app.get('/api/products', getProducts);
-    app.get('/api/products/:id', getProductById);
-    app.post('/api/products', addProduct);
-    app.put('/api/products/:id', updateProduct);
-    app.delete('/api/products/:id', deleteProduct);
+    app.use('/api/products', productRoutes);
+    app.use('/api/users', userRoutes);
 }
