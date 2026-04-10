@@ -1,7 +1,7 @@
 // Controller for authentication, registration, login, logout, and view all Users
 
-import User from "../models/userModel.js";
-import bcrypt from "bcryptjs";
+import User from "../models/User.js";
+import bcrypt from "bcrypt";
 import validator from "validator";
 
 //REGISTER
