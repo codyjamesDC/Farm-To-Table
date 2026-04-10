@@ -12,10 +12,40 @@ const getProducts = async (req, res) => {
 }
 
 const getProductById = async (req, res) => { 
+    try {
+        const productId = req.params.id;
+        let prod = await Product.findOne({ _id: productId });
 
+        if (!prod) {
+            return res.status(404).json({ message: 'Product not found' });
+        }
+
+        res.status(200).json(prod);
+    } catch (err) {
+        console.error(err); 
+        res.status(500).json({ message: 'Unable to get product', error: err.message });
+    }
 }
-const addProduct = async (req, res) => { 
 
+const addProduct = async (req, res) => {
+    try {
+        const { name, description, type, price, quantity, createdBy } = req.body;
+
+        const newProduct = new Product({
+            name,
+            description,
+            type,
+            price,
+            quantity,
+            createdBy
+        });
+
+        await newProduct.save();
+        res.status(200).json(newProduct);
+        
+    } catch (err) {
+        res.status(500).json({ message: 'Unable to add product', error: err.message });
+    }
 }
 const updateProduct = async (req, res) => { 
 
