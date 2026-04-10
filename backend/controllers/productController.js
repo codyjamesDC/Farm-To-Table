@@ -1,5 +1,6 @@
 import models from '../models';
 import mongoose from 'mongoose';
+import dotenv from ''
 
 try {
     await mongoose.connect(process.env.MONGO_URI);
@@ -10,11 +11,20 @@ try {
 
 const { Product } = models.product;
 
-const saveProduct = async (req, res) => {
-    try{
+const getProducts = async (req, res) => { 
 
-    } catch (err) {
-        res.status(500).send({ error: err.message });
-    }
+}
+const getProductById = async (req, res) => { 
+
+}
+const saveProduct = async (req, res) => { 
+
+}
+const updateProduct = async (req, res) => { 
+
+}
+const deleteProduct = async (req, res) => {
+
 }
 
+module.exports = { getProducts, getProductById, saveProduct, updateProduct, deleteProduct };
