@@ -1,12 +1,12 @@
 // Authentication controller for handling user login
-
+import User from '../models/User.js';
 import bcrypt from 'bcrypt';
 
 export const login = async (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-        return res.status(400).json({ error: 'Email and password are required' });
+        return res.status(400).send({ error: 'Email and password are required' });
     }
 
     try {
