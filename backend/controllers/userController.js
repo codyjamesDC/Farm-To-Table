@@ -1,4 +1,4 @@
-// Controller for authentication, registration, login, logout, and view all Users
+// Controller for authentication, registration, login, and logout
 
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
@@ -89,21 +89,5 @@ export const loginUser = async (req, res) => {
 // TODO: Clear session/cookie here when auth is implemented
 export const logoutUser = (req, res) => {
   return res.status(200).send({ message: "Logout successful." });
-};
-
-//GET ALL USERS
-export const getAllUsers = async (req, res) => {
-  try {
-    // Exclude passwords from the response
-    const users = await User.find({ userType: "customer" }).select("-password");
-
-    return res.status(200).send({
-      total: users.length,
-      users,
-    });
-  } catch (error) {
-    console.error("getAllUsers error:", error);
-    return res.status(500).send({ message: "Server error fetching users." });
-  }
 };
 
