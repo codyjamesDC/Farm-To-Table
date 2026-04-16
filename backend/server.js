@@ -1,6 +1,6 @@
 //Express Server
 import express from 'express';
-import connectDB from './config/db.js';
+import { connectDB } from './config/db.js';
 import dotenv from 'dotenv';
 import routes from './routes/router.js';
 
