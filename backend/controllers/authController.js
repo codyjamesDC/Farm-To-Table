@@ -3,6 +3,17 @@
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import validator from "validator";
+import jwt from 'jsonwebtoken'
+
+//HELPER FUNCTION FOR GENERATING TOKEN
+const generateToken = (userId) => {
+  return jwt.sign(
+    { id: userId },
+    process.env.JWT_SECRET,
+    { expiresIn: "1d" }
+  );
+};
+
 
 //REGISTER
 export const registerUser = async (req, res) => {
@@ -40,8 +51,23 @@ export const registerUser = async (req, res) => {
     });
 
     await newUser.save();
+    
+    // Generate token for the new user
+    const token = generateToken(newUser._id);
 
-    return res.status(201).send({ message: "Registration successful." });
+    //response
+    return res.status(201).send({
+      message: "Registration successful.",
+      token,
+      user: {
+        id: newUser._id,
+        firstName: newUser.firstName,
+        lastName: newUser.lastName,
+        email: newUser.email,
+        userType: newUser.userType,
+      },
+    });
+
   } catch (error) {
     console.error("registerUser error:", error);
     return res.status(500).send({ message: "Server error during registration." });
@@ -69,16 +95,21 @@ export const loginUser = async (req, res) => {
       return res.status(401).send({ message: "Invalid email or password." });
     }
 
-    // TODO: Add session/cookie-based auth later
+    // Generate token
+    const token = generateToken(user._id);
+
     return res.status(200).send({
       message: "Login successful.",
+      token,
       user: {
+        id: user._id,
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
         userType: user.userType,
       },
     });
+
   } catch (error) {
     console.error("loginUser error:", error);
     return res.status(500).send({ message: "Server error during login." });
@@ -86,7 +117,6 @@ export const loginUser = async (req, res) => {
 };
 
 //LOGOUT
-// TODO: Clear session/cookie here when auth is implemented
 export const logoutUser = (req, res) => {
   return res.status(200).send({ message: "Logout successful." });
 };
