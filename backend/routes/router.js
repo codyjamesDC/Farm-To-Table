@@ -1,5 +1,6 @@
 import productRoutes from './productRoutes.js';
 import authRoutes from './authRoutes.js';
+import cartRoute from './cartRoutes.js';
 
 
 export default (app) => {
@@ -13,4 +14,5 @@ export default (app) => {
 
     app.use('/api/products', productRoutes);
     app.use('/api/auth', authRoutes);
+    app.use('/api/cart', cartRoute);
 }
