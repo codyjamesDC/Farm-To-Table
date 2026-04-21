@@ -109,3 +109,18 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+nav{
+  background-color: lightgray;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+nav ul li {
+  padding: 8px;
+}
