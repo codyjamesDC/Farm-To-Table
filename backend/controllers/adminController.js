@@ -3,7 +3,7 @@
 //TODO: getLoginHistory, getTransactionHistory, getStats, getUsers with filter
 //TODO-BONUS: suspendUser, assignRole, removeRole, sendAnnouncement
 
-import User from "../models/User";
+import User from "../models/User.js";
 
 //GET ALL USERS
 export const getAllUsers = async (req, res) => {
