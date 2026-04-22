@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navbar from "/pages/Navbar";
 
 export default function Home() {
     const [isScrolled, setIsScrolled] = useState(true);
@@ -7,7 +8,7 @@ export default function Home() {
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
-        window.addEventListerner("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -15,7 +16,7 @@ export default function Home() {
 
     return (
         <div>
-            <p>Navbar goes here</p>
+            <Navbar isScrolled={isScrolled} />
             <p>Hero goes here</p>
             <p>Cart count: {cartCount}</p>
         </div>

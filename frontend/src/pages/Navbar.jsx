@@ -15,8 +15,15 @@ export default function Navbar() {
             </div>
 
             <div>
-                <a href="/">Home</a>
-                <a href="/signin">Sign In</a>
+                <a href="#harvest">Explore Harvest</a>
+                <a href="#farmers">Meet Farmers</a>
+                <a href="#market">Market</a>
+            </div>
+
+            {/* CTA */}
+            <div>
+                <button>Login</button>
+                <button onClick={() => setMenuOpen(!menuOpen)}>MENU</button>
             </div>
         </nav>
     );
