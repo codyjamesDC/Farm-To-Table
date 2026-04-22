@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar.jsx";
+import Hero from "./Hero.jsx"
 
 export default function Home() {
-    const [isScrolled, setIsScrolled] = useState(true);
+    const [isScrolled, setIsScrolled] = useState(() => window.scrollY > 20);
     const [cart] = useState([]);
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
+        handleScroll();
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -16,8 +18,7 @@ export default function Home() {
     return (
         <div>
             <Navbar isScrolled={isScrolled} />
-            <p>Hero goes here</p>
-            <p>Cart count: {cartCount}</p>
+            <Hero />
         </div>
     );
 }

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const LeafIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <path d="M12 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
@@ -15,8 +13,6 @@ const UserIcon = () => (
 );
 
 export default function Navbar({ isScrolled }) {
-    const [menuOpen, setMenuOpen] = useState(false);
-
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 ${isScrolled ? "bg-white" : "bg-transparent"}`}>
             
@@ -28,16 +24,16 @@ export default function Navbar({ isScrolled }) {
                         <LeafIcon />
                     </div>
                 <div>
-                    <p className={`text-xs font-medium ${isScrolled ? "text-gray-900" : "text-white"}`}>PHILIPPINE DEP. OF AGRICULTURE</p>
-                    <p className={`font-bold ${isScrolled ? "text-gray-900" : "text-white"}`}>Market Portal</p>
+                    <p className={`text-xs font-medium ${isScrolled ? "text-gray-900" : "text-black"}`}>PHILIPPINE DEP. OF AGRICULTURE</p>
+                    <p className={`font-bold ${isScrolled ? "text-gray-900" : "text-black"}`}>Market Portal</p>
                 </div>
                 </div>
 
                 {/* Desktop Nav Links */}
                 <div className="hidden md:flex items-center gap-8">
-                    <a href="#harvest" className={`text-sm font-medium ${isScrolled ? "text-gray-900" : "text-white"}`}>Explore Harvest</a>
-                    <a href="#farmers" className={`text-sm font-medium ${isScrolled ? "text-gray-900" : "text-white"}`}>Meet Farmers</a>
-                    <a href="#market" className={`text-sm font-medium ${isScrolled ? "text-gray-900" : "text-white"}`}>Market</a>
+                    <a href="#harvest" className={`text-sm font-bold ${isScrolled ? "text-gray-900" : "text-black"}`}>Explore Harvest</a>
+                    <a href="#farmers" className={`text-sm font-bold ${isScrolled ? "text-gray-900" : "text-black"}`}>Meet Farmers</a>
+                    <a href="#market" className={`text-sm font-bold ${isScrolled ? "text-gray-900" : "text-black"}`}>Market</a>
                 </div>
 
                 {/* CTA */}
