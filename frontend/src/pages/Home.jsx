@@ -1,10 +1,9 @@
-import { useState } from "react";
-import Navbar from "/pages/Navbar";
+import { useEffect, useState } from "react";
+import Navbar from "./Navbar.jsx";
 
 export default function Home() {
     const [isScrolled, setIsScrolled] = useState(true);
-    const [cart, setCart] = useState([]);
-    const [cartOpen, setCartOpen] = useState(false);
+    const [cart] = useState([]);
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
