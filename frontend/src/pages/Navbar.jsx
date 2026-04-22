@@ -24,16 +24,16 @@ export default function Navbar({ isScrolled }) {
                         <LeafIcon />
                     </div>
                 <div>
-                    <p className={`text-xs font-medium ${isScrolled ? "text-gray-900" : "text-black"}`}>PHILIPPINE DEP. OF AGRICULTURE</p>
-                    <p className={`font-bold ${isScrolled ? "text-gray-900" : "text-black"}`}>Market Portal</p>
+                    <p className={`text-xs font-medium ${isScrolled ? "text-gray-900" : "text-white"}`}>PHILIPPINE DEP. OF AGRICULTURE</p>
+                    <p className={`font-bold ${isScrolled ? "text-gray-900" : "text-white"}`}>Market Portal</p>
                 </div>
                 </div>
 
                 {/* Desktop Nav Links */}
                 <div className="hidden md:flex items-center gap-8">
-                    <a href="#harvest" className={`text-sm font-bold ${isScrolled ? "text-gray-900" : "text-black"}`}>Explore Harvest</a>
-                    <a href="#farmers" className={`text-sm font-bold ${isScrolled ? "text-gray-900" : "text-black"}`}>Meet Farmers</a>
-                    <a href="#market" className={`text-sm font-bold ${isScrolled ? "text-gray-900" : "text-black"}`}>Market</a>
+                    <a href="#harvest" className={`text-sm font-medium ${isScrolled ? "text-gray-900" : "text-white"}`}>Explore Harvest</a>
+                    <a href="#farmers" className={`text-sm font-medium ${isScrolled ? "text-gray-900" : "text-white"}`}>Meet Farmers</a>
+                    <a href="#market" className={`text-sm font-medium ${isScrolled ? "text-gray-900" : "text-white"}`}>Market</a>
                 </div>
 
                 {/* CTA */}
