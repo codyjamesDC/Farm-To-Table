@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const LeafIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
@@ -15,7 +15,10 @@ const UserIcon = () => (
 );
 
 export default function Navbar({ isScrolled }) {
+	const [showLogin, setShowLogin] = useState(false);
+
     return (
+        <>
         <nav className={`fixed top-0 left-0 right-0 z-50 ${isScrolled ? "bg-white" : "bg-transparent"}`}>
             
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -40,11 +43,26 @@ export default function Navbar({ isScrolled }) {
 
                 {/* CTA */}
                 <div className="hidden md:flex items-center gap-3">
-                    <Link to="/login" className="bg-[#2D5016] text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-[#1a3a0d] transition-colors duration-200">
+                    <button
+                        type="button"
+                        onClick={() => setShowLogin(true)}
+                        className="bg-[#2D5016] text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-[#1a3a0d] transition-colors duration-200"
+                    >
                         <UserIcon />Login
-                    </Link>
+                    </button>
                 </div>
             </div>
         </nav>
+        {showLogin && (
+                <div
+                    className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
+                    onClick={() => setShowLogin(false)}
+                >
+                    <div onClick={(e) => e.stopPropagation()}>
+                        <Login onClose={() => setShowLogin(false)} />
+                    </div>
+                </div>
+        )}
+    </>
     )
 }

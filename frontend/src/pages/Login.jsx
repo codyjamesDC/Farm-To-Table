@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
-export default function Login() {
+export default function Login({ onClose }) {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -11,7 +11,9 @@ export default function Login() {
 	const [error, setError] = useState("");
 	const [message, setMessage] = useState("");
 
+	// login form submission handler
 	const handleSubmit = async (event) => {
+		// prevent default form submission behavior
 		event.preventDefault();
 		setError("");
 		setMessage("");
@@ -23,6 +25,7 @@ export default function Login() {
 
 		setIsSubmitting(true);
 
+		// send login request to backend
 		try {
 			const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
 				method: "POST",
@@ -47,7 +50,11 @@ export default function Login() {
 			}
 
 			setMessage("Sign in successful. Redirecting to homepage...");
-			navigate("/", { replace: true });
+			if (onClose) {
+				onClose();
+			} else {
+				navigate("/");
+			}
 		} catch {
 			setError("Network error. Please check your backend server and try again.");
 		} finally {
