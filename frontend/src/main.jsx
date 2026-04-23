@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Root from './pages/Root.jsx';
 import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
 
 // import main app components from pages
 const router = createBrowserRouter([
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "home", element: <Home /> }
     ]
-  }
+  },
+  { path: "login", element: <Login /> }
 ]);
 
 // render everything using router provider

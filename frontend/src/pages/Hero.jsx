@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Hero() {
     return (
         <section className="relative h-screen overflow-hidden">
@@ -33,7 +35,8 @@ export default function Hero() {
                 {/* Button */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-10">
                     <a href="#harvest" className="bg-[#E8C547] text-gray-900 px-8 py-4 rounded-full text-base font-bold">Explore Today's Harvest</a>
-                    <a href="#market" className="bg-white/10 border-2 border-white/60 text-white px-8 py-4 rounded-full text-base font-semibold">Browse Market</a>
+                    <Link to="/products" className="bg-white/10 border-2 border-white/60 text-white px-8 py-4 rounded-full text-base font-semibold">Browse Market</Link>
+
                 </div>
 
                 {/* Search Bar */}

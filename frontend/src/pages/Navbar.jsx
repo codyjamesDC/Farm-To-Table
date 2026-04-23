@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const LeafIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <path d="M12 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
@@ -38,9 +40,9 @@ export default function Navbar({ isScrolled }) {
 
                 {/* CTA */}
                 <div className="hidden md:flex items-center gap-3">
-                    <button className="bg-[#2D5016] text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-[#1a3a0d] transition-colors duration-200">
+                    <Link to="/login" className="bg-[#2D5016] text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-[#1a3a0d] transition-colors duration-200">
                         <UserIcon />Login
-                    </button>
+                    </Link>
                 </div>
             </div>
         </nav>
