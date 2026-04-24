@@ -30,7 +30,7 @@ export default function Footer() {
                 official farm-to-table system.
             </p>
             
-                href="#"
+            <a href="#"
                 className="text-green-400 text-sm hover:text-green-300 transition-colors duration-200">
                 DA Merchant Portal →
             </a>
