@@ -33,15 +33,15 @@ export default function HowItWorksSection() {
     ];
 
     return (
-        <section className="py-20 px-6 bg-gradient-to-br from-[#F5F0E8] to-white">
+        <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
 
             {/* Section Header */}
             <div className="text-center mb-16">
-            <p className="text-[#2D5016] font-semibold text-sm tracking-widest uppercase mb-2">
+            <p className="text-[#ffffff] font-semibold text-sm tracking-widest uppercase mb-2">
                 Simple steps
             </p>
-            <h2 className="text-5xl font-black text-gray-900">How It Works</h2>
+            <h2 className="text-5xl font-black text-white">How It Works</h2>
             </div>
 
             {/* Steps Grid */}
@@ -60,10 +60,10 @@ export default function HowItWorksSection() {
                 </div>
 
                 {/* Text */}
-                <h3 className="font-bold text-gray-900 mb-2 transition-colors duration-200 group-hover:text-[#2D5016]">
+                <h3 className="font-bold text-white mb-2 transition-colors duration-200 group-hover:text-[#8ea380]">
                     {step.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{step.desc}</p>
 
                 </div>
             ))}
