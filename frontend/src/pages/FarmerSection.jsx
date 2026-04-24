@@ -10,7 +10,9 @@ export default function FarmersSection() {
 
             {/* Section Header */}
             <div className="text-center mb-16">
-            <p className="text-[#2D5016] font-semibold text-sm uppercase mb-2">Our community</p>
+            <p className="text-[#2D5016] font-semibold text-sm tracking-widest uppercase mb-2">
+                Our community
+            </p>
             <h2 className="text-5xl font-black text-gray-900">Meet Your Local Farmers</h2>
             </div>
 
@@ -18,11 +20,11 @@ export default function FarmersSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
             {/* Left — Image */}
-            <div>
+            <div className="overflow-hidden rounded-3xl shadow-2xl">
                 <img
                 src="https://images.unsplash.com/photo-1740477138822-906f6b845579?w=800&q=80"
                 alt="Local farmers"
-                className="w-full h-[420px] object-cover rounded-3xl"
+                className="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-500"
                 />
             </div>
 
@@ -38,16 +40,21 @@ export default function FarmersSection() {
                 {/* Farmer List */}
                 <div className="space-y-4">
                 {FARMERS.map(farmer => (
-                    <div key={farmer.name} className="flex items-center gap-4 bg-[#FDFBF7] border border-gray-100 p-4 rounded-2xl">
+                    <div
+                    key={farmer.name}
+                    className="flex items-center gap-4 bg-[#FDFBF7] border border-gray-100 p-4 rounded-2xl hover:shadow-md transition-all duration-200 cursor-pointer"
+                    >
                     <img
                         src={farmer.image}
                         alt={farmer.name}
-                        className="w-14 h-14 rounded-full object-cover"
+                        className="w-14 h-14 rounded-full object-cover border-2 border-[#E8C547]"
                     />
-                    <div>
+                    <div className="flex-1">
                         <h4 className="font-bold text-gray-900">{farmer.name}</h4>
                         <p className="text-sm text-[#2D5016]">{farmer.role}</p>
-                        <p className="text-xs text-gray-400">{farmer.location} · {farmer.products} products</p>
+                        <p className="text-xs text-gray-400">
+                        {farmer.location} · {farmer.products} products
+                        </p>
                     </div>
                     </div>
                 ))}
