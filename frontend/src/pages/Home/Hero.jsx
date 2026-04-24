@@ -20,7 +20,7 @@ export default function Hero() {
                 {/* Heading */}
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 max-w-5xl leading-tight">
                 The Freshness <br />
-                <span className="text-[#E8C547]">of our Land.</span>
+                <span className="text-[#ffc800]">of our Land.</span>
                 </h1>
 
                 {/* Subheading */}

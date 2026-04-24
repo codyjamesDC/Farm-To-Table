@@ -41,7 +41,7 @@ export default function HowItWorksSection() {
             <p className="text-[#ffffff] font-semibold text-sm tracking-widest uppercase mb-2">
                 Simple steps
             </p>
-            <h2 className="text-5xl font-black text-white">How It Works</h2>
+            <h2 className="text-5xl font-black text-[#ffc800]">How It Works</h2>
             </div>
 
             {/* Steps Grid */}
@@ -54,7 +54,7 @@ export default function HowItWorksSection() {
                     <div className="w-16 h-16 bg-[#2D5016] rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
                     {step.icon}
                     </div>
-                    <span className="absolute -top-2 -right-2 w-7 h-7 bg-[#E8C547] rounded-full flex items-center justify-center text-xs font-black text-gray-900 shadow-sm">
+                    <span className="absolute -top-2 -right-2 w-7 h-7 bg-[#ffc800] rounded-full flex items-center justify-center text-xs font-black text-gray-900 shadow-sm">
                     {i + 1}
                     </span>
                 </div>

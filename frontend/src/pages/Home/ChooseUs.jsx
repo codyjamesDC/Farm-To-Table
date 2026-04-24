@@ -30,7 +30,7 @@ export default function WhyChooseUsSection() {
 
             {/* Section Header */}
             <div className="text-center mb-16">
-            <h2 className="text-5xl font-black text-white mb-3">Why Choose Us</h2>
+            <h2 className="text-5xl font-black text-[#ffc800] mb-3">Why Choose Us</h2>
             <p className="text-white/70 text-lg">
                 Supporting local agriculture, delivering fresh quality
             </p>
@@ -58,7 +58,7 @@ export default function WhyChooseUsSection() {
 
             {/* Testimonials Header */}
             <div className="text-center mt-18 mb-12">
-            <h2 className="text-5xl font-black text-white">What Our Customers Say</h2>
+            <h2 className="text-5xl font-black text-[#ffc800]">What Our Customers Say</h2>
             </div>
 
             {/* Testimonials Grid */}
