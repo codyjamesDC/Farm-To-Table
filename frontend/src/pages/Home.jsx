@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar.jsx";
 import Hero from "./Hero.jsx"
+import HarvestSection from "./HarvestSection.jsx";
 
 export default function Home() {
     const [isScrolled, setIsScrolled] = useState(() => window.scrollY > 20);
-    const [cart] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -19,6 +20,7 @@ export default function Home() {
         <div>
             <Navbar isScrolled={isScrolled} />
             <Hero />
+            <HarvestSection cart={cart} setCart={setCart} />
         </div>
     );
 }
