@@ -4,6 +4,17 @@ const TESTIMONIALS = [
     { name: "Linda Torres",  location: "Cebu",         quote: "The DA Market Portal changed how I shop for groceries. So convenient and fresh!", rating: 5 },
 ];
 
+const StarIcon = ({ filled }) => (
+    <svg
+        viewBox="0 0 24 24"
+        fill={filled ? "#E8C547" : "none"}
+        stroke="#E8C547"
+        strokeWidth="2"
+        className="w-4 h-4">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </svg>
+);
+
 export default function TestimonialsSection() {
     return (
         <section className="py-20 px-6 bg-linear-to-br from-[#F5F0E8] to-white">
@@ -17,12 +28,15 @@ export default function TestimonialsSection() {
             {/* Testimonials Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
-                <div key={i} className="bg-white p-8 rounded-2xl shadow-md border border-gray-50">
+                <div
+                key={i}
+                className="bg-white p-8 rounded-2xl shadow-md border border-gray-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
 
                 {/* Star Rating */}
                 <div className="flex gap-1 mb-4">
                     {Array.from({ length: 5 }).map((_, j) => (
-                    <span key={j} className="text-yellow-400 text-lg">★</span>
+                    <StarIcon key={j} filled={j < t.rating} />
                     ))}
                 </div>
 
@@ -31,7 +45,7 @@ export default function TestimonialsSection() {
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#E8C547] rounded-full flex items-center justify-center font-bold text-gray-900 text-sm">
+                    <div className="w-10 h-10 bg-[#E8C547] rounded-full flex items-center justify-center font-bold text-gray-900 text-sm shrink-0">
                     {t.name[0]}
                     </div>
                     <div>
