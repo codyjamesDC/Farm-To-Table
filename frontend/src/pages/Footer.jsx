@@ -54,7 +54,7 @@ export default function Footer() {
                 {["About Us", "Contact", "FAQs", "Privacy Policy"].map(link => (
                 <li key={link}>
                     
-                    href="#"
+                <a href="#"
                     className="hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
                     {link}
                     </a>
