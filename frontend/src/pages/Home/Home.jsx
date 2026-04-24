@@ -5,7 +5,6 @@ import HarvestSection from "./HarvestSection.jsx";
 import HowItWorksSection from "./HowItWorkSection.jsx";
 import FarmersSection from "./FarmerSection.jsx";
 import ChooseUsSection from "./ChooseUs.jsx";
-import TestimonialsSection from "./TestimonialSection.jsx";
 import MarketSection from "./MarketSection.jsx";
 import CTASection from "./CTASection.jsx";
 import Footer from "./Footer.jsx";
@@ -39,7 +38,6 @@ export default function Home() {
                 <HowItWorksSection />
                 <FarmersSection />
                 <ChooseUsSection />
-                <TestimonialsSection />
                 <MarketSection cart={cart} setCart={setCart} />
                 <CTASection />
                 <Footer />
