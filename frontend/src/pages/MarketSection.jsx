@@ -25,15 +25,22 @@ export default function MarketSection({ cart, setCart }) {
 
             {/* Section Header */}
             <div className="text-center mb-12">
-            <p className="text-[#2D5016] font-semibold text-sm uppercase mb-2">
+            <p className="text-[#2D5016] font-semibold text-sm tracking-widest uppercase mb-2">
                 Our marketplace
             </p>
-            <h2 className="text-5xl font-black text-gray-900">
+            <h2 className="text-5xl md:text-6xl font-black text-gray-900">
                 Fresh. Local. Direct.
             </h2>
             <p className="text-xl text-gray-500 mt-2">
                 Connecting Our Farm Communities
             </p>
+            </div>
+
+            {/* Divider */}
+            <div className="flex items-center gap-4 mb-10">
+            <div className="flex-1 h-px bg-gray-200" />
+            <span className="text-xs tracking-widest text-gray-400 uppercase">All Products</span>
+            <div className="flex-1 h-px bg-gray-200" />
             </div>
 
             {/* Product Grid */}
