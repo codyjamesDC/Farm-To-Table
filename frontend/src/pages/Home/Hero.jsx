@@ -8,19 +8,8 @@ const SearchIcon = () => (
 export default function Hero() {
     return (
         <section className="relative h-screen overflow-hidden">
-
-            {/* Background Image + Overlay */}
-            <div className="absolute inset-0">
-                <img
-                src="https://images.unsplash.com/photo-1601368763621-a4ce4d7ab4e0?w=1920&q=80"
-                alt="Farm landscape"
-                className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-linear-to-br from-black/60 via-black/35 to-transparent" />
-            </div>
-
             {/* Content */}
-            <div className="relative h-full flex flex-col items-center justify-center text-center px-6 pt-16">
+            <div className="relative h-full flex flex-col items-center justify-center text-center px-6 pt-16 z-10">
 
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 text-white text-sm px-4 py-2 rounded-full mb-6">
