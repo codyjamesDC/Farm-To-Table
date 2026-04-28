@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Frontend Vite Server
+    origin: 'http://localhost:5173', // Frontend Vite Server #TODO: can be relocated to .env
     credentials: true
 }));
 
