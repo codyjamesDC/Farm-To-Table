@@ -167,10 +167,7 @@ export default function Login({ onClose }) {
 
 				</form>
 
-				{/* Footer */}
-				<p className="text-center text-white/40 text-xs mt-5">
-					Sign up is currently unavailable.
-				</p>
+
 
 				{!onClose && (
 					<Link
