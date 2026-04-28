@@ -24,7 +24,7 @@ export default function FarmersSection() {
                 <img
                 src="https://images.unsplash.com/photo-1740477138822-906f6b845579?w=800&q=80"
                 alt="Local farmers"
-                className="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-105 object-cover hover:scale-105 transition-transform duration-500"
                 />
             </div>
 

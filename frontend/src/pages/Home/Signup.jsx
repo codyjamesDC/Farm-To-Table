@@ -10,9 +10,9 @@ const LeafIcon = () => (
 	</svg>
 );
 
-export default function Signup({ onClose }) {
-	const navigate = useNavigate();
-	const [form, setForm] = useState({
+export default function Signup({ onClose }) { // Accept onClose prop to allow closing when used in Navbar
+	const navigate = useNavigate(); 
+	const [form, setForm] = useState({ // Form state for all input fields
 		firstName: "",
 		middleName: "",
 		lastName: "",
@@ -20,15 +20,15 @@ export default function Signup({ onClose }) {
 		password: "",
 		confirmPassword: "",
 	});
-	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false); 
 	const [error, setError] = useState("");
 	const [message, setMessage] = useState("");
 
-	const handleChange = (e) => {
+	const handleChange = (e) => { 
 		setForm({ ...form, [e.target.name]: e.target.value });
 	};
 
-	const handleSubmit = async (event) => {
+	const handleSubmit = async (event) => { // Handle form submission
 		event.preventDefault();
 		setError("");
 		setMessage("");
@@ -49,8 +49,8 @@ export default function Signup({ onClose }) {
 		setIsSubmitting(true);
 		try {
 			const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
+				method: "POST", 
+				headers: { "Content-Type": "application/json" }, 
 				body: JSON.stringify({
 					firstName: form.firstName,
 					middleName: form.middleName,
@@ -96,7 +96,7 @@ export default function Signup({ onClose }) {
 
 			{/* Glass card */}
 			<div
-				className="relative z-10 w-full max-w-xs rounded-3xl p-6"
+				className="relative z-10 w-full max-w-xs  rounded-3xl p-6"
 				style={{
 					background: "rgba(20, 50, 10, 0.35)",
 					backdropFilter: "blur(20px)",
@@ -111,7 +111,7 @@ export default function Signup({ onClose }) {
 						onClick={onClose}
 						className="absolute top-4 right-4 w-7 h-7 rounded-full bg-white/20 hover:bg-white/40 text-white text-xs font-bold flex items-center justify-center transition-all"
 					>
-						✕
+						X
 					</button>
 				)}
 
