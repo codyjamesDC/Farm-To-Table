@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/layout/Navbar.jsx";
-import Hero from "../components/ui/Home/Hero.jsx"
-import HarvestSection from "../components/ui/Home/HarvestSection.jsx";
-import HowItWorksSection from "../components/ui/Home/HowItWorkSection.jsx";
-import FarmersSection from "../components/ui/Home/FarmerSection.jsx";
-import ChooseUsSection from "../components/ui/Home/ChooseUs.jsx";
-import MarketSection from "../components/ui/Home/MarketSection.jsx";
-import CTASection from "../components/ui/Home/CTASection.jsx";
+import Hero from "../components/ui/home/Hero.jsx"
+import HarvestSection from "../components/ui/home/HarvestSection.jsx";
+import HowItWorksSection from "../components/ui/home/HowItWorkSection.jsx";
+import FarmersSection from "../components/ui/home/FarmerSection.jsx";
+import ChooseUsSection from "../components/ui/home/ChooseUs.jsx";
+import MarketSection from "../components/ui/home/MarketSection.jsx";
+import CTASection from "../components/ui/home/CTASection.jsx";
 import Footer from "../components/layout/Footer.jsx";
 
 export default function Home() {

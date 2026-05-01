@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Login from "../../pages/Login.jsx";
+import Login from "../../pages/LoginForm.jsx";
 import Signup from "../../pages/Signup.jsx";
 
 const LeafIcon = () => (

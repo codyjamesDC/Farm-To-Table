@@ -4,8 +4,8 @@ import "./index.css"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Root from './pages/Root.jsx';
-import Home from "./pages/Home.jsx";
-import Login from "./pages/Login.jsx";
+import Home from "./pages/Landing.jsx";
+import Login from "./pages/LoginForm.jsx";
 
 // import main app components from pages
 const router = createBrowserRouter([
