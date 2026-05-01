@@ -4,7 +4,7 @@ import "./index.css"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Root from './pages/Root.jsx';
-import Home from "./pages/Landing.jsx";
+import Landing from "./pages/Landing.jsx";
 import Login from "./pages/LoginForm.jsx";
 
 // import main app components from pages
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
     path: "/", 
     element: <Root />, 
     children: [
-      { index: true, element: <Home /> },
-      { path: "home", element: <Home /> }
+      { index: true, element: <Landing /> },
+      { path: "home", element: <Landing /> }
     ]
   },
   { path: "login", element: <Login /> }

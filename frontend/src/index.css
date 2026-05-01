@@ -1,1 +1,140 @@
 @import "tailwindcss";
+
+@theme {
+	--animate-fade-up: fade-up 0.8s ease-out both;
+	--animate-fade-in: fade-in 0.9s ease-out both;
+	--animate-slide-up: slide-up 0.8s ease-out both;
+	--animate-slide-left: slide-left 0.9s ease-out both;
+	--animate-slide-right: slide-right 0.9s ease-out both;
+	--animate-float: float 8s ease-in-out infinite;
+	--animate-drift: drift 16s ease-in-out infinite;
+	--animate-pulse-soft: pulse-soft 5s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(28px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slide-up {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slide-left {
+	from {
+		opacity: 0;
+		transform: translateX(28px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slide-right {
+	from {
+		opacity: 0;
+		transform: translateX(-28px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+	50% {
+		transform: translate3d(0, -16px, 0);
+	}
+}
+
+@keyframes drift {
+	0%,
+	100% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	50% {
+		transform: translate3d(22px, -18px, 0) scale(1.04);
+	}
+}
+
+@keyframes pulse-soft {
+	0%,
+	100% {
+		opacity: 0.45;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.75;
+		transform: scale(1.06);
+	}
+}
+
+.delay-150 {
+	animation-delay: 150ms;
+}
+
+.delay-300 {
+	animation-delay: 300ms;
+}
+
+.delay-450 {
+	animation-delay: 450ms;
+}
+
+.delay-600 {
+	animation-delay: 600ms;
+}
+
+.delay-750 {
+	animation-delay: 750ms;
+}
+
+.landing-section {
+	animation: fade-up 0.8s ease-out both;
+}
+
+.landing-card {
+	transition: transform 250ms ease, box-shadow 250ms ease, background-color 250ms ease;
+}
+
+.landing-card:hover {
+	transform: translateY(-6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

@@ -1,3 +1,5 @@
+import RevealItem from "../RevealItem";
+
 const SearchIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-8 h-8 text-white">
         <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -37,36 +39,40 @@ export default function HowItWorksSection() {
         <div className="max-w-5xl mx-auto">
 
             {/* Section Header */}
-            <div className="text-center mb-16">
-            <p className="text-[#ffffff] font-semibold text-sm tracking-widest uppercase mb-2">
-                Simple steps
-            </p>
-            <h2 className="text-5xl font-black text-[#ffc800]">How It Works</h2>
-            </div>
+            <RevealItem delay={0}>
+                <div className="text-center mb-16">
+                    <p className="text-[#ffffff] font-semibold text-sm tracking-widest uppercase mb-2">
+                        Simple steps
+                    </p>
+                    <h2 className="text-5xl font-black text-[#ffc800]">How It Works</h2>
+                </div>
+            </RevealItem>
 
             {/* Steps Grid */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {steps.map((step, i) => (
-                <div key={i} className="flex flex-col items-center text-center group">
+                {steps.map((step, i) => (
+                    <RevealItem key={i} delay={i * 120}>
+                        <div className="flex flex-col items-center text-center group">
 
-                {/* Icon + Number */}
-                <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-[#2D5016] rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
-                    {step.icon}
-                    </div>
-                    <span className="absolute -top-2 -right-2 w-7 h-7 bg-[#ffc800] rounded-full flex items-center justify-center text-xs font-black text-gray-900 shadow-sm">
-                    {i + 1}
-                    </span>
-                </div>
+                        {/* Icon + Number */}
+                        <div className="relative mb-6">
+                            <div className="w-16 h-16 bg-[#2D5016] rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+                            {step.icon}
+                            </div>
+                            <span className="absolute -top-2 -right-2 w-7 h-7 bg-[#ffc800] rounded-full flex items-center justify-center text-xs font-black text-gray-900 shadow-sm">
+                            {i + 1}
+                            </span>
+                        </div>
 
-                {/* Text */}
-                <h3 className="font-bold text-white mb-2 transition-colors duration-200 group-hover:text-[#8ea380]">
-                    {step.title}
-                </h3>
-                <p className="text-sm text-white/70 leading-relaxed">{step.desc}</p>
+                        {/* Text */}
+                        <h3 className="font-bold text-white mb-2 transition-colors duration-200 group-hover:text-[#8ea380]">
+                            {step.title}
+                        </h3>
+                        <p className="text-sm text-white/70 leading-relaxed">{step.desc}</p>
 
-                </div>
-            ))}
+                        </div>
+                    </RevealItem>
+                ))}
             </div>
 
         </div>

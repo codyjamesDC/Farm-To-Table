@@ -1,4 +1,5 @@
 import ProductCard from "../../layout/ProductCard";
+import RevealItem from "../RevealItem";
 
 const PRODUCTS = [
     { id: 1, name: "Cherry Tomatoes", price: 150, unit: "1kg", category: "Vegetables", image: "https://images.unsplash.com/photo-1559740509-8202abdaa7df?w=600&q=80", farmer: "Juan dela Cruz", badge: "Just Harvested" },
@@ -24,32 +25,37 @@ export default function MarketSection({ cart, setCart }) {
         <div className="max-w-7xl mx-auto">
 
             {/* Section Header */}
-            <div className="text-center mb-12">
-            <p className="text-[#2D5016] font-semibold text-sm tracking-widest uppercase mb-2">
-                Our marketplace
-            </p>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900">
-                Fresh. Local. Direct.
-            </h2>
-            <p className="text-xl text-gray-500 mt-2">
-                Connecting Our Farm Communities
-            </p>
-            </div>
+            <RevealItem delay={0}>
+                <div className="text-center mb-12">
+                <p className="text-[#2D5016] font-semibold text-sm tracking-widest uppercase mb-2">
+                    Our marketplace
+                </p>
+                <h2 className="text-5xl md:text-6xl font-black text-gray-900">
+                    Fresh. Local. Direct.
+                </h2>
+                <p className="text-xl text-gray-500 mt-2">
+                    Connecting Our Farm Communities
+                </p>
+                </div>
+            </RevealItem>
 
             {/* Divider */}
-            <div className="flex items-center gap-4 mb-10">
-            <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-xs tracking-widest text-gray-400 uppercase">All Products</span>
-            <div className="flex-1 h-px bg-gray-200" />
-            </div>
+            <RevealItem delay={150}>
+                <div className="flex items-center gap-4 mb-10">
+                <div className="flex-1 h-px bg-gray-200" />
+                <span className="text-xs tracking-widest text-gray-400 uppercase">All Products</span>
+                <div className="flex-1 h-px bg-gray-200" />
+                </div>
+            </RevealItem>
 
             {/* Product Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PRODUCTS.map(product => (
-                <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
-            ))}
+                {PRODUCTS.map((product, i) => (
+                    <RevealItem key={product.id} delay={300 + i * 80}>
+                        <ProductCard product={product} onAddToCart={addToCart} />
+                    </RevealItem>
+                ))}
             </div>
-
         </div>
         </section>
     );
