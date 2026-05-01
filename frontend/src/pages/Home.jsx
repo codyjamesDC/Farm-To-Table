@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import Navbar from "./Navbar.jsx";
-import Hero from "./Hero.jsx"
-import HarvestSection from "./HarvestSection.jsx";
-import HowItWorksSection from "./HowItWorkSection.jsx";
-import FarmersSection from "./FarmerSection.jsx";
-import ChooseUsSection from "./ChooseUs.jsx";
-import MarketSection from "./MarketSection.jsx";
-import CTASection from "./CTASection.jsx";
-import Footer from "./Footer.jsx";
+import Navbar from "../components/layout/Navbar.jsx";
+import Hero from "../components/ui/Home/Hero.jsx"
+import HarvestSection from "../components/ui/Home/HarvestSection.jsx";
+import HowItWorksSection from "../components/ui/Home/HowItWorkSection.jsx";
+import FarmersSection from "../components/ui/Home/FarmerSection.jsx";
+import ChooseUsSection from "../components/ui/Home/ChooseUs.jsx";
+import MarketSection from "../components/ui/Home/MarketSection.jsx";
+import CTASection from "../components/ui/Home/CTASection.jsx";
+import Footer from "../components/layout/Footer.jsx";
 
 export default function Home() {
     const [isScrolled, setIsScrolled] = useState(() => window.scrollY > 20);
